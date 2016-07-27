@@ -38,6 +38,39 @@ class Fraction:
 
         return firstnum == secondnum
 
+    def __ne__(self,other):
+        firstFraction = Fraction(*reduce(self.num, self.den))
+        secondFraction = Fraction(*reduce(other.num, other.den))
+        firstnum = firstFraction.num * secondFraction.den
+        secondnum = secondFraction.num * firstFraction.den
+
+        return firstnum != secondnum
+
+    def __gt__(self,other):
+        firstnum = self.num / self.den
+        secondnum = other.num / other.den
+
+        return firstnum > secondnum
+
+    def __lt__(self,other):
+        firstnum = self.num / self.den
+        secondnum = other.num / other.den
+
+        return firstnum < secondnum
+
+    def __ge__(self,other):
+        firstnum = self.num / self.den
+        secondnum = other.num / other.den
+
+        return firstnum >= secondnum
+
+    def __lt__(self,other):
+        firstnum = self.num / self.den
+        secondnum = other.num / other.den
+
+        return firstnum <= secondnum
+
+
     def __add__(self,other):
         newnum = self.num * other.den + self.den * other.num
         newden = self.den * other.den
@@ -67,3 +100,4 @@ class Fraction:
         newden = int(self.den * other.num)
 
         return Fraction(*reduce(newnum, newden))
+
