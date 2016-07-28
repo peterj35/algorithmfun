@@ -17,8 +17,8 @@ while not s.isEmpty():
 print(s.isEmpty())
 
 def revstring(mystr):
-    reversedstring = ''
     s = Stack()
+    reversedstring = ''
     for i in mystr:
     	s.push(i)
     while not s.isEmpty():
@@ -27,3 +27,27 @@ def revstring(mystr):
     return reversedstring
 
 print(revstring('woohoo! it worked.'))
+
+def parChecker(symbolString):
+    s = Stack()
+    balanced = True
+    index = 0
+    while index < len(symbolString) and balanced:
+        symbol = symbolString[index]
+        if symbol == "(":
+            s.push(symbol)
+        else:
+            if s.isEmpty():
+                balanced = False
+            else:
+                s.pop()
+
+        index = index + 1
+
+    if balanced and s.isEmpty():
+        return True
+    else:
+        return False
+
+print(parChecker('((()))'))
+print(parChecker('(()'))
