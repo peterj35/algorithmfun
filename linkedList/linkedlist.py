@@ -66,6 +66,15 @@ class UnorderedList:
         else:
             previous.setNext(current.getNext())
 
+    def append(self, item):
+        current = self.head
+        while current.getNext() != None:
+            current = current.getNext()
+        current.setNext(Node(item))
+
+
+
+
     # To be Implemented: APPEND, INSERT, INDEX, POP http://interactivepython.org/runestone/static/pythonds/BasicDS/ImplementinganUnorderedListLinkedLists.html
 
 
