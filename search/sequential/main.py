@@ -34,3 +34,30 @@ print(sequentialSearch(testlist, 14))
 mylist = [0, 1, 2, 8, 13, 17, 19, 32, 42, 69]
 print(orderedSeqSearch(mylist, 8))
 print(orderedSeqSearch(mylist, 32))
+
+
+"""
+For sequentialSearch
+
+    cases when item present:
+        best: 1
+        worst: n
+        average: n/2
+
+    when item not present:
+        best: n
+        worst: n
+        average: n
+
+For orderedSeqSearch
+
+    cases when item present:
+        best: 1
+        worst: n
+        average: n/2
+
+    when item not present:
+        best: 1
+        worst: n
+        average: n/2
+"""
