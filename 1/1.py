@@ -13,5 +13,12 @@ def isUniqueChars(astring):
 
     return True
 
-mystring = "Hello Wrd"
-print(isUniqueChars(mystring))
+mystring = "Helo Wrd"
+# print(isUniqueChars(mystring))
+
+
+def no_duplicates(str_):
+    """ Determine if str_ has all unique characters """
+    return len(str_) == len(set(str_))
+
+print(no_duplicates(mystring))
